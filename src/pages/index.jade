@@ -1,0 +1,77 @@
+include ../blocks/head/head
+include ../blocks/header/header
+include ../blocks/browsehappy/browsehappy
+include ../blocks/menu/menu
+include ../blocks/mobile-menu/mobile-menu
+include ../blocks/s-nav/s-nav
+include ../blocks/s-faces/s-faces
+include ../blocks/s-oper/s-oper
+include ../blocks/s-hr/s-hr
+include ../blocks/s-mk/s-mk
+include ../blocks/s-it/s-it
+include ../blocks/s-fr/s-fr
+include ../blocks/s-analysis/s-analysis
+include ../blocks/s-fin/s-fin
+include ../blocks/s-accounting/s-accounting
+include ../blocks/s-gov/s-gov
+include ../blocks/s-cases/s-cases
+include ../blocks/s-thanks/s-thanks
+include ../blocks/s-logos/s-logos
+include ../blocks/footer/footer
+include ../blocks/popups/popups
+include ../blocks/mobile-menu-trigger/mobile-menu-trigger
+
+// ========================================================== 
+// Верстка и программирование сайта: http://web-master-pro.ru 
+// ========================================================== 
+
+doctype html
+
+html(lang="ru-RU").no-js
+
+    +head("Экспертный бизнес-консалтинг")
+
+    body.page
+        .page__content
+            +browsehappy()
+            +header()
+            +s-nav()
+            +s-faces()
+            +s-oper()
+            +s-hr()
+            +s-mk()
+            +s-it()
+            +s-fr()
+            +s-analysis()
+            +s-fin()
+            +s-accounting()
+            +s-gov()
+            +s-cases()
+            +s-thanks()
+            +s-logos()
+            +footer()
+
+        +menu("page__menu")
+        +mobile-menu()
+        +mobile-menu-trigger("page__mobile-menu-trigger")
+            
+        .hidden
+            +form-order()
+            +popup-thankyou()
+            +popup-privacy()
+
+        script.
+            var ms=document.createElement("link");ms.rel="stylesheet";ms.href="assets/css/style.min.css?rev=@@hash";document.getElementsByTagName("head")[0].appendChild(ms);
+
+        <!--[if lt IE 9]>
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js")
+        <![endif]-->
+
+        include inc/metrika.html
+        
+        script(src="https://code.jquery.com/jquery-2.2.3.min.js")
+        script window.jQuery || document.write('<script src="assets/js/jquery.min.js"><\/script>')
+        script(src="assets/js/plugins.min.js?rev=@@hash")
+        script(src="assets/js/main.min.js?rev=@@hash")

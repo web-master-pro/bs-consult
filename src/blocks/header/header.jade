@@ -1,0 +1,23 @@
+include ../logo/logo
+include ../worktime/worktime
+include ../contacts/contacts
+include ../main-form/main-form
+include ../scroll-down/scroll-down
+
+mixin header(addclass)
+    header.header(class= addclass)#header
+        .header__in
+            .header__top
+                +logo("header__logo")
+                +worktime("header__worktime")
+                +contacts("header__contacts")
+            .header__main
+                .header__main-left
+                    h1.header__title Экспертный <br>бизнес-консалтинг
+                    p.header__text Повышение «отдачи» от бизнеса со 100% гарантией результата
+                    ul.header__list
+                        li.header__list-item Для успешного старта бизнеса
+                        li.header__list-item Для интенсивного развития существующего
+                        
+                +main-form("header__form")
+            +scroll-down("header__scroll-down")

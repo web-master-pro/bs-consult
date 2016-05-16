@@ -1,0 +1,208 @@
+.menu
+    display block
+    transition all 1.5s ease
+    &.on
+        left 0
+        opacity 1
+
+    &__section
+        margin 0
+        &--1
+            margin-bottom 15px
+
+    &__title
+        color #003874
+        font(Thin)
+        font-size 17px
+        line-height 1.2
+        text-transform uppercase
+        margin 0 0 20px 35px
+
+    &__list
+        display block
+        list-style none
+        padding 0
+        margin 0
+
+    &__item
+        display block
+        width 235px
+        height 50px
+        padding 0
+        margin 0 0 20px
+
+    &__link
+        display block
+        width 100%
+        height 50px
+        position relative
+        transition all .3s ease
+
+    &__icon
+        display block
+        width 50px
+        height 50px
+        position: absolute;
+        top 0
+        left 35px
+
+    &__caption
+        display block
+        width 150px
+        padding 11px 0 0 15px
+        color #003874
+        font(Bold)
+        font-size 14px
+        line-height 16px
+        text-transform uppercase
+        position absolute;
+        top 0
+        left 85px
+        transition all .3s ease
+
+    &__section--1
+        .menu
+            &__icon
+                background-color #004c9d
+            &__item
+                &:nth-child(1)
+                    .menu__icon
+                        &::before
+                            content ""
+                            retinaSprite($icon_menu_oper_group)
+                            position absolute
+                            top 11px
+                            left 10px
+                &:nth-child(2)
+                    .menu__icon
+                        &::before
+                            content ""
+                            retinaSprite($icon_menu_hr_group)
+                            position absolute
+                            top 11px
+                            left 6px
+                &:nth-child(3)
+                    .menu__icon
+                        &::before
+                            content ""
+                            retinaSprite($icon_menu_mk_group)
+                            position absolute
+                            top 10px
+                            left 9px
+                &:nth-child(4)
+                    .menu__icon
+                        &::before
+                            content ""
+                            retinaSprite($icon_menu_it_group)
+                            position absolute
+                            top 11px
+                            left 7px
+                    .menu__caption
+                        padding-top 19px
+                &:nth-child(5)
+                    .menu__icon
+                        &::before
+                            content ""
+                            retinaSprite($icon_menu_fr_group)
+                            position absolute
+                            top 11px
+                            left 10px
+                    .menu__caption
+                        padding-top 19px
+
+            &__link
+                &.active
+                &:hover
+                    background-color #004c9d
+                    .menu__caption
+                        color #fff
+
+    &__section--2
+        .menu
+            &__title
+                color #156500
+            &__icon
+                background-color #156500
+            &__item
+                width 305px
+                &:nth-child(1)
+                    .menu__icon
+                        &::before
+                            content ""
+                            retinaSprite($icon_menu_analysis_group)
+                            position absolute
+                            top 11px
+                            left 10px
+                &:nth-child(2)
+                    .menu__icon
+                        &::before
+                            content ""
+                            retinaSprite($icon_menu_fin_group)
+                            position absolute
+                            top 11px
+                            left 10px
+                &:nth-child(3)
+                    .menu__icon
+                        &::before
+                            content ""
+                            retinaSprite($icon_menu_accounting_group)
+                            position absolute
+                            top 11px
+                            left 10px
+                &:nth-child(4)
+                    .menu__icon
+                        &::before
+                            content ""
+                            retinaSprite($icon_menu_gov_group)
+                            position absolute
+                            top 11px
+                            left 13px
+
+
+            &__caption
+                width 220px
+                color #156500
+            &__link
+                width 100%
+                &.active
+                &:hover
+                    background-color #156500
+                    .menu__caption
+                        color #fff
+
+.menu.shrink
+    .menu
+        &__title
+            margin-bottom 10px
+        &__item
+            margin-bottom 10px
+
+.menu.compact
+    .menu
+        &__section
+            margin 0
+        &__title
+            display none
+        &__item
+            margin-bottom 10px
+
+.menu.mini
+    .menu
+        &__section
+            margin 0
+        &__title
+            display none
+        &__item
+            margin-bottom 10px
+        &__caption
+            display none
+        &__link
+            width: 85px
+            &.active
+            &:hover
+                width 100%
+                .menu__caption
+                    display block
+
+.menu.hidden
+    display none

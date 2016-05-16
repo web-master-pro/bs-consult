@@ -1,0 +1,52 @@
+container(w = 1000px)
+    display block
+    max-width w
+    margin 0 auto
+    position relative
+
+font(face = Regular)
+    if face == Regular
+        font-family "ProximaNova-Regular", sans-serif
+        font-weight 400
+    if face == Bold
+        font-family "ProximaNova-Bold", sans-serif
+        font-weight 700
+        .safari &
+        .ios &
+            font-weight 500
+    if face == Thin
+        font-family "ProximaNova-Thin", sans-serif
+        font-weight 100
+    if face == Extra
+        font-family "ProximaNova-Extrabold", sans-serif
+        font-weight 800
+
+button(bgcolor = blue)
+    display block
+    width 100%
+    max-width 278px
+    height 60px
+    if bgcolor == blue
+        background-color #004c9d
+    if bgcolor == green
+        background-color #156500
+    border none
+    color white
+    font(Bold)
+    font-size 20px
+    line-height 1
+    letter-spacing: 0.05em
+    text-transform uppercase
+    text-align center
+    text-decoration none
+    outline: none
+    cursor pointer
+    transition all 0.3s ease
+
+    &:hover
+        color @color
+        text-decoration none
+        if bgcolor == blue
+            background-color #0069d9
+        if bgcolor == green
+            background-color lighten(#156500, 15%)

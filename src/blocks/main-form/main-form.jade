@@ -1,0 +1,9 @@
+mixin main-form(addclass)
+    form.main-form(action="assets/sendmail.php", method="POST", class= addclass)#form-main
+        h3.main-form__title Запишитесь на бесплатную консультацию
+        input(type="hidden" name="form" value="form-main")
+        input(type="text" name="name" placeholder="Ваше имя").main-form__input
+        input(type="tel" name="phone" placeholder="Ваш телефон").main-form__input.js-phone-field
+        button(type="submit" role="button").main-form__button Записаться
+        p.main-form__text <strong>Узнайте,</strong> как вы можете улучшить свой бизнес
+        p.main-form__privacy Все данные строго конфиденциальны

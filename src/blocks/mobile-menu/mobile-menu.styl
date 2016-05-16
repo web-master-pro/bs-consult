@@ -1,0 +1,53 @@
+.mobile-menu
+    display block
+    width 320px
+    background rgba(255,255,255,0.95)
+    position fixed
+    height 100%
+    top 0
+    bottom 0
+    left -320px
+    overflow-y auto
+    overflow-x hidden
+    -webkit-overflow-scrolling touch
+    padding 20px 0 20px 0
+    box-shadow 0 0 30px rgba(0, 0, 0, 0.3)
+    z-index 1500
+
+    &.opened
+      display block
+
+    &__menu
+        margin-left -10px
+
+
+    &__close
+        display block
+        width 35px
+        height 35px
+        background-color #004c9d
+        color #fff
+        font(Thin)
+        font-size 35px
+        line-height 35px
+        text-align center
+        border none
+        padding 2px 0 0
+        text-decoration none
+        outline none
+        position absolute
+        opacity 0.2
+        top 0
+        right 0
+        transition opacity 0.3s ease
+        &:hover
+            color #fff
+            opacity 0.8
+            text-decoration none
+            text-shadow none
+
+.blur
+    -moz-filter blur(2px)
+    -o-filter blur(2px)
+    -ms-filter blur(2px)
+    filter blur(2px)

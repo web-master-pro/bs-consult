@@ -1,0 +1,146 @@
+.s-faces
+    &__first
+        min-height 895px
+        background #06090b url(img/s-faces-1-bg.jpg) no-repeat center top
+        padding 53px 0 60px
+        +below(1000px)
+            background-size cover
+    &__second
+        min-height 880px
+        background #06090b url(img/s-faces-2-bg.jpg) no-repeat center top
+        padding 115px 0 60px
+        +below(1000px)
+            background-size cover
+    &__in
+        container(1040px)
+        padding 0px 20px
+        display flex
+        justify-content: space-between;
+        +below(640px)
+            flex-wrap wrap
+            justify-content: center;
+
+    &__left
+        +below(640px)
+            order 2
+    &__right
+        .s-faces__first &
+            padding-top 130px
+            +below(640px)
+                padding 0 0 30px
+        .s-faces__second &
+            padding-top 60px
+            +below(640px)
+                padding 0 0 30px
+
+
+    &__title
+        color white
+        font(Bold)
+        font-size 40px
+        line-height 1
+        text-align center
+        margin 0 0 92px
+        flex 1 100%
+
+    &__name
+        color white
+        font(Thin)
+        font-size 40px
+        text-transform uppercase
+        line-height 1
+        margin 0 0 30px
+        strong
+            font(Bold)
+        +below(640px)
+            text-align center
+
+    &__position
+        color #4cc82c
+        font(Bold)
+        font-size 20px
+        line-height 1
+        padding-top 17px
+        margin 0 0 55px
+        position relative
+        &::before
+            content ""
+            display block
+            width 60px
+            height 3px
+            background-color #4cc82c
+            position absolute
+            top 0
+            left 0
+            margin 0
+        +below(640px)
+            text-align center
+            &::before
+                left 50%
+                margin-left: -30px
+
+    &__text
+        max-width 610px
+        color white
+        font(Thin)
+        font-size 20px
+        line-height 30px
+        margin 0 0 30px
+        strong
+            font(Bold)
+
+
+    &__call
+        max-width 440px
+        color #00a9d9
+        font(Bold)
+        font-size 20px
+        line-height 31px
+        margin 50px 0 35px
+        +below(640px)
+            text-align center
+            margin-left: auto;
+            margin-right: auto;
+
+    &__button
+        button()
+        +below(640px)
+            margin-left: auto;
+            margin-right: auto;
+
+    &__photo
+        width 100%
+        height auto
+        margin-right -40px
+        +below(1100px)
+            margin-right 0
+        .s-faces__first &
+            max-width 424px
+        .s-faces__second &
+            max-width: 331px
+
+    &__photo-name
+        color white
+        font(Bold)
+        font-size 22px
+        line-height 1
+        text-align center
+        margin 0 0 10px
+        *margin-right -40px
+        +below(1100px)
+            margin-right 0
+        +below(640px)
+            display none
+
+    &__photo-position
+        color #4cc82c
+        font(Thin)
+        font-size 18px
+        line-height 1
+        text-align center
+        margin 0
+        *margin-right -40px
+        +below(1100px)
+            margin-right 0
+        +below(640px)
+            display none

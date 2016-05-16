@@ -1,0 +1,6 @@
+include ../menu/menu
+
+mixin mobile-menu(addclass)
+    .mobile-menu(class= addclass)
+        button(title="Закрыть" type="button").mobile-menu__close ×
+        +menu("mobile-menu__menu")

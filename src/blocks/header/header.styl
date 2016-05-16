@@ -1,0 +1,131 @@
+.header
+    width: 100%;
+    position: relative;
+    background: #e5ebf1 url(img/header-bg.jpg) no-repeat center center;
+    background-size: cover;
+
+    &__in
+        container(1214px)
+        min-height 870px
+        padding 75px 20px 40px
+        +below(640px)
+            padding 50px 20px 20px
+
+    &__top
+        display: flex;
+        flex-wrap: no-wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 0 105px;
+        +below(900px)
+            flex-wrap: wrap;
+            margin-bottom 30px
+        +below(640px)
+            margin-bottom: 0;
+    &__logo
+    &__worktime
+    &__contacts
+        flex: 0 1 auto;
+        +below(900px)
+            margin-bottom: 30px;
+
+    &__logo
+        +below(650px)
+            flex: 1 100%;
+            text-align: center;
+
+    &__worktime
+        +below(900px)
+            flex: 1 100%;
+            order 2
+        +below(650px)
+            flex: 1 100%;
+            text-align: center;
+            display none
+
+    &__contacts
+        +below(900px)
+            order 1
+        +below(650px)
+            flex: 1 100%;
+            text-align: center;
+            display none
+
+    &__main
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 12px;
+        +below(640px)
+            flex-wrap wrap
+            justify-content center
+
+    &__main-left
+        max-width: 780px;
+        padding-top: 20px;
+        margin-right 20px
+        margin-bottom 30px
+        +below(640px)
+            margin-right auto
+    &__form
+        min-width: 280px;
+        margin-bottom 30px
+
+    &__title
+        color #003874
+        font(Extra)
+        font-size 52px
+        line-height 1.25
+        text-transform uppercase
+        text-align: left;
+        font-weight: 800;
+        letter-spacing: 0.011em
+        margin 0 0 46px 0
+        +below(900px)
+            font-size 40px
+        +below(768px)
+            font-size: 30px
+        +below(640px)
+            text-align center
+
+    &__text
+        max-width: 540px;
+        color: #003874;
+        font();
+        font-size: 27px;
+        line-height: 1.5;
+        margin: 0 0 78px;
+        +below(640px)
+            text-align center
+
+    &__list
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+    &__list-item
+        font(Bold);
+        font-size: 21px;
+        line-height: 1;
+        padding: 0 0 0 50px;
+        margin: 0 0 15px
+        position relative
+        &:nth-child(1)
+            color: #156500;
+            &::before
+                content ""
+                retinaSprite($icon_pin_green_group)
+                position absolute
+                top -2px
+                left 0
+        &:nth-child(2)
+            color: #004c9d;
+            &::before
+                content ""
+                retinaSprite($icon_pin_blue_group)
+                position absolute
+                top -2px
+                left 0
+
+    &__scroll-down
+        +below(425px)
+            display none
