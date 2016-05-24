@@ -1,5 +1,5 @@
-mixin menu(addclass)
-    .menu(class= addclass)
+mixin menu()
+    .menu&attributes(attributes)
         section.menu__section.menu__section--1
             h3.menu__title для интенсивного <br>развития
             ul.menu__list
@@ -15,10 +15,10 @@ mixin menu(addclass)
                     a(href="#marketing-consulting").menu__link
                         .menu__icon
                         .menu__caption Маркетинговый <br>консалтинг
-                li.menu__item
-                    a(href="#it-consulting").menu__link
-                        .menu__icon
-                        .menu__caption IT-консалтинг
+                //- li.menu__item
+                //-     a(href="#it-consulting").menu__link
+                //-         .menu__icon
+                //-         .menu__caption IT-консалтинг
                 li.menu__item
                     a(href="#franchising").menu__link
                         .menu__icon

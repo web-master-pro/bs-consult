@@ -3,6 +3,7 @@ include ../blocks/header/header
 include ../blocks/browsehappy/browsehappy
 include ../blocks/menu/menu
 include ../blocks/mobile-menu/mobile-menu
+include ../blocks/s-download/s-download
 include ../blocks/s-nav/s-nav
 include ../blocks/s-faces/s-faces
 include ../blocks/s-oper/s-oper
@@ -34,30 +35,32 @@ html(lang="ru-RU").no-js
     body.page
         .page__content
             +browsehappy()
-            +header()
-            +s-nav()
-            +s-faces()
-            +s-oper()
-            +s-hr()
-            +s-mk()
-            +s-it()
-            +s-fr()
-            +s-analysis()
-            +s-fin()
-            +s-accounting()
-            +s-gov()
-            +s-cases()
-            +s-thanks()
-            +s-logos()
-            +footer()
+            +header(id="header")
+            +s-download(id="download")
+            +s-nav(id="nav")
+            +s-faces(id="faces")
+            +s-oper(id="operational-consulting")
+            +s-hr(id="hr-consulting")
+            +s-mk(id="marketing-consulting")
+            //- +s-it(id="it-consulting")
+            +s-fr(id="franchising")
+            +s-analysis(id="analysis")
+            +s-fin(id="funding")
+            +s-accounting(id="accounting")
+            +s-gov(id="goverment")
+            +s-cases(id="cases")
+            +s-thanks(id="thanks")
+            +s-logos(id="logos")
+            +footer(id="footer")
 
-        +menu("page__menu")
+        +menu(class="page__menu")
         +mobile-menu()
-        +mobile-menu-trigger("page__mobile-menu-trigger")
+        +mobile-menu-trigger(class="page__mobile-menu-trigger")
             
         .hidden
             +form-order()
             +popup-thankyou()
+            +popup-thankyou-download()
             +popup-privacy()
 
         script.
@@ -69,9 +72,9 @@ html(lang="ru-RU").no-js
         script(src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js")
         <![endif]-->
 
-        include inc/metrika.html
-        
         script(src="https://code.jquery.com/jquery-2.2.3.min.js")
         script window.jQuery || document.write('<script src="assets/js/jquery.min.js"><\/script>')
         script(src="assets/js/plugins.min.js?rev=@@hash")
         script(src="assets/js/main.min.js?rev=@@hash")
+
+        //- include inc/metrika.html

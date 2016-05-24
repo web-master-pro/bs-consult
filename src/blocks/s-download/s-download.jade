@@ -1,0 +1,9 @@
+include ../download-form/download-form
+
+mixin s-download()
+    .s-download&attributes(attributes)
+        .s-download__in
+            .s-download__left
+                +download-form(class="s-download__form")
+            .s-download__right
+                img(src="assets/img/s-download-books.png" at="").s-download__img 

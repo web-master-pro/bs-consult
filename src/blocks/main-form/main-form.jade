@@ -1,5 +1,5 @@
-mixin main-form(addclass)
-    form.main-form(action="assets/sendmail.php", method="POST", class= addclass)#form-main
+mixin main-form()
+    form.main-form(action="assets/sendmail.php", method="POST")&attributes(attributes)#form-main
         h3.main-form__title Запишитесь на бесплатную консультацию
         input(type="hidden" name="form" value="form-main")
         input(type="text" name="name" placeholder="Ваше имя").main-form__input

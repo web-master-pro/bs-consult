@@ -4,8 +4,8 @@ include ../contacts/contacts
 include ../main-form/main-form
 include ../scroll-down/scroll-down
 
-mixin header(addclass)
-    header.header(class= addclass)#header
+mixin header()
+    header.header&attributes(attributes)
         .header__in
             .header__top
                 +logo("header__logo")

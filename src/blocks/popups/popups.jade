@@ -1,5 +1,5 @@
-mixin form-order(addclass)
-    form.form-order.popup(action="assets/sendmail.php", method="POST", class= addclass)#form-order
+mixin form-order()
+    form.form-order.popup(action="assets/sendmail.php", method="POST")&attributes(attributes)#form-order
         h3.form-order__title Запишитесь на бесплатную консультацию
         input(type="hidden" name="form" value="form-order")
         input(type="text" name="name" placeholder="Ваше имя").form-order__input
@@ -8,14 +8,22 @@ mixin form-order(addclass)
         p.form-order__privacy Все данные строго конфиденциальны
         
 
-mixin popup-thankyou(addclass)
-    .popup-thankyou.popup(class= addclass)#popup-thankyou
+mixin popup-thankyou()
+    .popup-thankyou.popup&attributes(attributes)#popup-thankyou
         h3.popup-thankyou__title Спасибо!
         p.popup-thankyou__text Спасибо, что оставили заявку. Мы свяжемся с Вами в самое ближайшее время.
         button.popup-thankyou__button.js-close-button Закрыть
 
-mixin popup-privacy(addclass)
-    .popup-privacy.popup#popup-privacy(class= addclass)
+mixin popup-thankyou-download()
+    .popup-thankyou.popup&attributes(attributes)#popup-thankyou-download
+        h3.popup-thankyou__title Спасибо!
+        p.popup-thankyou__text Вот ссылка на методичку:
+        p.popup-thankyou__text 
+            a(href="#" target="_blank") Скачать методичку
+        button.popup-thankyou__button.js-close-button Закрыть
+
+mixin popup-privacy()
+    .popup-privacy.popup#popup-privacy&attributes(attributes)
         .popup-privacy__content
             h2 Информация о политике конфиденциальности на сайте BS-CONSULT.PRO
     

@@ -13,8 +13,6 @@ var gulp                = require("gulp"),
     gulpif              = require('gulp-if'),
     gutil               = require('gulp-util'),
     htmlPrettify        = require('gulp-html-prettify'),
-    imagemin            = require('gulp-imagemin'),
-    imageminPngquant    = require('imagemin-pngquant'),
     jade                = require('gulp-jade'),
     notify              = require('gulp-notify'),
     plumber             = require('gulp-plumber'),
@@ -39,6 +37,7 @@ var path = {
         img:            'dist/assets/img/',
         favicons:       'dist/assets/img/favicons/',
         fonts:          'dist/assets/fonts/',
+        video:          'dist/assets/video/',
         php:            'dist/assets/'
     },
     src: {
@@ -57,6 +56,7 @@ var path = {
         sprite:         'src/sprite/**/{*,!_*}.png',
         fonts:          'src/fonts/**/{*,!_*}.*',
         php:            'src/php/**/{*,!_*}.php',
+        video:          'src/video/**/*.*',
         stylesinc:      'src/styles/inc/',
         tmp:            'src/tmp/'
     },
@@ -112,13 +112,13 @@ var options = {
         padding: 10,
         cssTemplate: 'src/styles/templates/sprite-template.mustache'
     },
-    imagemin: {
-        optimizationLevel: 3,
-        progressive: true,
-        interlaced: true,
-        svgoPlugins: [{removeViewBox: false}],
-        use: [imageminPngquant()]
-    }
+    // imagemin: {
+    //     optimizationLevel: 3,
+    //     progressive: true,
+    //     interlaced: true,
+    //     svgoPlugins: [{removeViewBox: false}],
+    //     use: [imageminPngquant()]
+    // }
 };
 
 gulp.task('browser-sync', function() {
@@ -230,7 +230,7 @@ gulp.task('js:jquery', function() {
 gulp.task('img', function () {
     return gulp.src(path.src.img)
         .pipe(plumber(options.plumber))
-        .pipe(imagemin(options.imagemin))
+        // .pipe(imagemin(options.imagemin))
         .pipe(gulp.dest(path.dist.img))
 });
 
@@ -246,7 +246,7 @@ gulp.task('sprite', function (cb) {
 
     spriteData.img
         .pipe(buffer())
-        .pipe(imagemin())
+        // .pipe(imagemin())
         .pipe(gulp.dest(path.dist.img));
 
     spriteData.css
@@ -270,6 +270,12 @@ gulp.task('php', function() {
         .pipe(gulp.dest(path.dist.php))
 });
 
+gulp.task('video', function() {
+    return gulp.src(path.src.video)
+        .pipe(plumber(options.plumber))
+        .pipe(gulp.dest(path.dist.video))
+});
+
 // COMPLEX TASKS
 
 gulp.task('html', function (cb) {
@@ -285,7 +291,7 @@ gulp.task('js', ['js:jquery','js:plugins','js:app']);
 gulp.task('build', function (cb) {
     return runSequence(
         'clean',
-        ['sprite', 'img', 'favicons', 'fonts', 'php', 'js'],
+        ['sprite', 'img', 'favicons', 'fonts', 'php', 'js','video'],
         ['style', 'fs:style', 'fs:fonts'],
         'html', cb);
 });
@@ -343,6 +349,10 @@ gulp.task('watch', function (cb) {
 
     watch(path.src.php, function(event, cb) {
         return runSequence('php', browserSync.reload);
+    });
+
+    watch(path.src.video, function(event, cb) {
+        return runSequence('video', browserSync.reload);
     });
 
 });

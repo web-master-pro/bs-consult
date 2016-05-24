@@ -1,0 +1,65 @@
+.download-form
+    display block
+    width 100%
+    margin 0 auto
+    &__main
+        background-color white
+        padding 40px 30px 34px
+        margin 0 auto 22px
+        +below(800px)
+            padding 40px 20px 30px
+
+    &__title
+        color #003874
+        font(Bold)
+        font-size 25px
+        text-transform uppercase
+        line-height: 1
+        text-align: center;
+        margin 0 0 15px
+        +below(800px)
+            font-size 22px
+        +below(480px)
+            font-size 20px
+
+    &__text
+        color #003874
+        font()
+        font-size 18px
+        line-height 1.5
+        text-align center
+        margin 0 0 30px
+        +below(800px)
+            line-height 1.2
+
+    &__input
+        input()
+        display block
+        max-width 278px
+        margin: 0 auto 15px
+
+    &__button
+        button()
+        height 50px
+        max-width 278px
+        margin 20px auto 0
+        +below(480px)
+            font-size 18px
+
+    &__privacy
+        max-width 278px
+        color #58585a
+        font(Thin)
+        font-size 14px
+        line-height 1
+        padding-left 30px
+        text-align left
+        position relative
+        margin 0 auto
+        +below(480px)
+            padding-left 20px
+        &::before
+            content ""
+            retinaSprite($icon_lock_group)
+            position absolute
+            left 0

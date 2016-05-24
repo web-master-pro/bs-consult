@@ -1,0 +1,10 @@
+mixin download-form()
+    form.download-form(action="assets/sendmail.php", method="POST")&attributes(attributes)#form-download
+        .download-form__main
+            h3.download-form__title Скачайте бесплатно
+            p.download-form__text руководство по масштабированию вашего бизнеса и определите перспективы роста своей компании
+            input(type="hidden" name="form" value="form-download")
+            input(type="email" name="email" placeholder="Ваше email").download-form__input
+            input(type="tel" name="phone" placeholder="Ваш телефон").download-form__input.js-phone-field
+            button(type="submit" role="button").download-form__button Скачать методичку
+        p.download-form__privacy Все данные строго конфиденциальны

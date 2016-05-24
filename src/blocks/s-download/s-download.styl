@@ -1,0 +1,54 @@
+.s-download
+    background-color #c3ceda
+
+    &__in
+        container(1090px)
+        padding 0 20px
+        overflow-y hidden
+        height 530px
+        display flex
+        flex-flow row nowrap
+        justify-content: space-between;
+        +below(800px)
+            height auto
+        +below(750px)
+            flex-flow row wrap
+            justify-content: center
+            padding 0
+
+    &__left
+        flex 0 0 386px
+        padding-top 60px
+        padding-bottom 20px
+        margin-right 20px
+        +below(800px)
+            flex 0 1 50%
+        +below(750px)
+            flex 0 1 386px
+            order 2
+            padding 20px 0 20px
+            margin-right 0
+
+    &__right
+        flex 0 1 590px
+        overflow-y hidden
+        +below(1000px)
+            display flex
+            flex-direction column
+            justify-content center
+        +below(800px)
+            flex 0 1 50%
+        +below(750px)
+            flex 0 1 400px
+            margin-top 40px
+            padding-right 10px
+
+    &__img
+        display block
+        width auto
+        width 100%
+        max-width 590px
+        height auto
+        margin-top -15px
+        +below(1000px)
+            margin 0 auto
