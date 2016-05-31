@@ -32,3 +32,4 @@
 //= ../bower/smoothscroll-for-websites/SmoothScroll.js
 //= ../bower/wow/dist/wow.js
 //= ../bower/device.js/device.js
+//= libs/bideo.js

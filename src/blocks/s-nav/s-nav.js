@@ -44,21 +44,21 @@ $(document).ready(function(){
         scrollTo("#hr-consulting");
     });
 
-    $(".nav-1__item-more--3")
-    .mousemove(function(e){
-        var clientX = e.pageX - $(this).offset().left,
-            clientY = e.pageY - $(this).offset().top;
-        if ($(window).width() > 640) {
-            if ((clientX < 360) && (clientY < 205)){
-                $(this).fadeOut(duration);
-            }
-        }
-    })
-    .click(function(){
-        scrollTo("#marketing-consulting");
-    });
+    // $(".nav-1__item-more--3")
+    // .mousemove(function(e){
+    //     var clientX = e.pageX - $(this).offset().left,
+    //         clientY = e.pageY - $(this).offset().top;
+    //     if ($(window).width() > 640) {
+    //         if ((clientX < 360) && (clientY < 205)){
+    //             $(this).fadeOut(duration);
+    //         }
+    //     }
+    // })
+    // .click(function(){
+    //     scrollTo("#marketing-consulting");
+    // });
 
-    $(".nav-1__item-more--4")
+    $(".nav-1__item-more--3")
     .mousemove(function(e){
         var clientX = e.pageX - $(this).offset().left,
             clientY = e.pageY - $(this).offset().top;
@@ -69,10 +69,10 @@ $(document).ready(function(){
         }
     })
     .click(function(){
-        scrollTo("#it-consulting");
+        scrollTo("#marketing-consulting");
     });
 
-    $(".nav-1__item-more--5")
+    $(".nav-1__item-more--4")
     .mousemove(function(e){
         var clientX = e.pageX - $(this).offset().left,
             clientY = e.pageY - $(this).offset().top;

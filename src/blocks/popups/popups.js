@@ -9,10 +9,10 @@ $(document).ready(function(){
     });
 
     $('.js-order-button').click(function (){
+        $("#form-order-source").val($(this).data("source"));
         $.magnificPopup.open({
             items:{
                 src:$('#form-order')
-                // src:$('#popup-thankyou')
             },
             type:'inline',
             midClick: true,
@@ -21,12 +21,12 @@ $(document).ready(function(){
             overflowY: 'scroll',
             fixedContentPos: false,
             callbacks: {
-    			close: function() {
-    				validator.resetForm();
-    			}
-    		}
+                close: function() {
+                    validator.resetForm();
+                }
+            }
         });
-	});
+    });
 
     var validator = $("#form-order").validate({
         rules: {

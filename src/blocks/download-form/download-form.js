@@ -18,7 +18,8 @@ $(document).ready(function() {
                 url: $(form).attr("action"),
                 data: $(form).serialize()
             }).done(function() {
-                window.location.href = '12345.pdf';
+                // window.location.href = 'assets/files/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%B7%D1%80%D0%B5%D0%BB%D0%BE%D1%81%D1%82%D0%B8%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0%20BS%20Technology.pdf';
+                window.open('assets/files/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%B7%D1%80%D0%B5%D0%BB%D0%BE%D1%81%D1%82%D0%B8%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0%20BS%20Technology.pdf','_blank');
                 $.magnificPopup.open({
                     items:{
                         src:$('#popup-thankyou-download')
@@ -30,7 +31,7 @@ $(document).ready(function() {
                     overflowY: 'scroll',
                     fixedContentPos: false
                 });
-                // yaCounter36986630.reachGoal("zaiavka");
+                yaCounter36986630.reachGoal("zaiavka");
             });
             return false;
         }

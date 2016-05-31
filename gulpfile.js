@@ -38,7 +38,8 @@ var path = {
         favicons:       'dist/assets/img/favicons/',
         fonts:          'dist/assets/fonts/',
         video:          'dist/assets/video/',
-        php:            'dist/assets/'
+        php:            'dist/assets/',
+        files:          'dist/assets/files/'
     },
     src: {
         blocksjade:     'src/blocks/**/{*,!_*}.jade',
@@ -56,6 +57,7 @@ var path = {
         sprite:         'src/sprite/**/{*,!_*}.png',
         fonts:          'src/fonts/**/{*,!_*}.*',
         php:            'src/php/**/{*,!_*}.php',
+        files:          'src/files/**/{*,!_*}.*',
         video:          'src/video/**/*.*',
         stylesinc:      'src/styles/inc/',
         tmp:            'src/tmp/'
@@ -276,6 +278,12 @@ gulp.task('video', function() {
         .pipe(gulp.dest(path.dist.video))
 });
 
+gulp.task('files', function() {
+    return gulp.src(path.src.files)
+        .pipe(plumber(options.plumber))
+        .pipe(gulp.dest(path.dist.files))
+});
+
 // COMPLEX TASKS
 
 gulp.task('html', function (cb) {
@@ -291,7 +299,7 @@ gulp.task('js', ['js:jquery','js:plugins','js:app']);
 gulp.task('build', function (cb) {
     return runSequence(
         'clean',
-        ['sprite', 'img', 'favicons', 'fonts', 'php', 'js','video'],
+        ['sprite', 'img', 'favicons', 'fonts', 'php', 'js','video', 'files'],
         ['style', 'fs:style', 'fs:fonts'],
         'html', cb);
 });
@@ -353,6 +361,10 @@ gulp.task('watch', function (cb) {
 
     watch(path.src.video, function(event, cb) {
         return runSequence('video', browserSync.reload);
+    });
+
+    watch(path.src.files, function(event, cb) {
+        return runSequence('files', browserSync.reload);
     });
 
 });

@@ -9,7 +9,6 @@ include ../blocks/s-faces/s-faces
 include ../blocks/s-oper/s-oper
 include ../blocks/s-hr/s-hr
 include ../blocks/s-mk/s-mk
-include ../blocks/s-it/s-it
 include ../blocks/s-fr/s-fr
 include ../blocks/s-analysis/s-analysis
 include ../blocks/s-fin/s-fin
@@ -39,15 +38,17 @@ html(lang="ru-RU").no-js
             +s-download(id="download")
             +s-nav(id="nav")
             +s-faces(id="faces")
-            +s-oper(id="operational-consulting")
-            +s-hr(id="hr-consulting")
-            +s-mk(id="marketing-consulting")
-            //- +s-it(id="it-consulting")
-            +s-fr(id="franchising")
+
             +s-analysis(id="analysis")
             +s-fin(id="funding")
             +s-accounting(id="accounting")
             +s-gov(id="goverment")
+
+            +s-oper(id="operational-consulting")
+            +s-hr(id="hr-consulting")
+            +s-mk(id="marketing-consulting")
+            +s-fr(id="franchising")
+            
             +s-cases(id="cases")
             +s-thanks(id="thanks")
             +s-logos(id="logos")
@@ -77,4 +78,4 @@ html(lang="ru-RU").no-js
         script(src="assets/js/plugins.min.js?rev=@@hash")
         script(src="assets/js/main.min.js?rev=@@hash")
 
-        //- include inc/metrika.html
+        include inc/metrika.html

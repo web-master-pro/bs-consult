@@ -15,15 +15,20 @@
     // НЕ ТРОГАЙТЕ КОД НИЖЕ ЭТОЙ СТРОКИ!!!
 
     $data["form"]       = strtolower(strip_tags($_REQUEST['form']));
-    $data["name"]      = strip_tags($_REQUEST['name']);
+    $data["source"]     = strip_tags($_REQUEST['source']);
+    $data["email"]      = strip_tags($_REQUEST['email']);
+    $data["name"]       = strip_tags($_REQUEST['name']);
     $data["phone"]      = strip_tags($_REQUEST['phone']);
 
     if (empty($data["form"])) exit;
 
     switch ($data["form"]) {
-        case "form-main":
         case "form-order":
             $headline = "Запись на консультацию";
+            break;
+        case "form-download":
+            $headline = "Запрос методички";
+            $data["source"] = "Запрос методички";
             break;
         default:
             $headline = "Заявка...";
@@ -43,8 +48,16 @@
 
     $message  = "<html><body style=\"font-family:Arial,sans-serif;\">\r\n";
     $message .= "<h2 style=\"border-bottom:1px solid #ccc;\">" . $headline. "</h2>\r\n";
-    $message .= "<p><strong>Имя:</strong> " . $data["name"] . "</p>\r\n";
+
+    if ($data["form"] == "form-download") {
+        $message .= "<p><strong>Email:</strong> " . $data["email"] . "</p>\r\n";
+    } else {
+        $message .= "<p><strong>Имя:</strong> " . $data["name"] . "</p>\r\n";
+    };
+
     $message .= "<p><strong>Телефон:</strong> " . $data["phone"] . "</p>\r\n";
+    $message .= "<p><strong>Источник:</strong> " . $data["source"] . "</p>\r\n";
+
     $message .= "</body></html>";
 
     $result = @mail($to_email, $subject, $message, $headers);
@@ -58,6 +71,6 @@
         echo "true";
     } else {
         echo "false";
-    }
+    };
 
 ?>

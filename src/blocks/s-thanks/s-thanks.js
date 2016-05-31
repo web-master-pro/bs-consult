@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+    $('.js-gallery').magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled:true
+        },
+        fixedContentPos: false
+    });
+
     $('.thanks').slick({
         infinite: true,
         speed: 1000,

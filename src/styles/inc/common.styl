@@ -1,10 +1,18 @@
 a, input, *:focus
     outline none
 
+// html
+//     box-sizing border-box
+//     height 100%
+//     margin 0
+
 html
     box-sizing border-box
-    height 100%
     margin 0
+    &.macos
+    &.safari
+    &.ios
+        overflow-x hidden
 
 *, *:before, *:after
     box-sizing inherit

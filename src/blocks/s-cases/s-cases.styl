@@ -2,8 +2,13 @@
     padding-bottom 90px
 
     &__main
-        background url(img/s-cases-bg.jpg) no-repeat center top
+        background url(img/s-cases-0-bg.jpg) no-repeat center top
         background-size cover
+        transition all 1s ease
+        // &--0
+        //     background url(img/s-cases-0-bg.jpg) no-repeat center top
+        // &--1
+        //     background url(img/s-cases-1-bg.jpg) no-repeat center top
 
     &__main-in
         container(1240px)
@@ -132,6 +137,8 @@
         line-height 1
         text-align right
         margin 0 0 30px
+        .cases__case--2 &
+            width 150px
 
     &__payback-value
         width 123px
@@ -143,6 +150,8 @@
         font-size 20px
         line-height 1
         text-align right
+        .cases__case--2 &
+            width 160px
 
     &__tasks
         display block
@@ -166,7 +175,7 @@
         &:hover
             border-bottom none
             text-decoration none
-        
+
 
     &__popup
         display none
