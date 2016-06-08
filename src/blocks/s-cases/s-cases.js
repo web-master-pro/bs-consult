@@ -23,8 +23,8 @@ $(document).ready(function() {
     });
 
     $('.cases').on('beforeChange', function(event, slick, currentSlide,nextSlide){
-        console.log(nextSlide);
-        $(".s-cases__main").css("background-image", "url(assets/img/s-cases-"+ nextSlide + "-bg.jpg)");
+        var slideNumber = nextSlide + 1;
+        $(".s-cases__main").css("background-image", "url(assets/img/s-cases-bg-"+ slideNumber + ".jpg)");
     });
 
 });

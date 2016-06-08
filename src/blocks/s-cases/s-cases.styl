@@ -2,13 +2,9 @@
     padding-bottom 90px
 
     &__main
-        background url(img/s-cases-0-bg.jpg) no-repeat center top
+        background url(img/s-cases-bg-1.jpg) no-repeat center top
         background-size cover
         transition all 1s ease
-        // &--0
-        //     background url(img/s-cases-0-bg.jpg) no-repeat center top
-        // &--1
-        //     background url(img/s-cases-1-bg.jpg) no-repeat center top
 
     &__main-in
         container(1240px)
@@ -34,12 +30,12 @@
         margin 0
         position relative
         cf()
-        &::before
-            content ""
-            retinaSprite($icon_cases_min_group)
-            position absolute
-            top 57px
-            left 0
+        // &::before
+        //     content ""
+        //     retinaSprite($icon_cases_min_group)
+        //     position absolute
+        //     top 57px
+        //     left 0
         +below(1000px)
             padding 50px 20px 50px 70px
         +below(480px)
@@ -115,6 +111,14 @@
         left 0
         .cases__case--1 &
             retinaSprite($icon_cases_1_group)
+        .cases__case--4 &
+            display block
+            height 45px
+            width 279px
+            background url(img/s-cases-logo-4.png) no-repeat center center
+            +below(480px)
+                transform scale(.8)
+                transform-origin top left
 
     &__profit-title
     &__payback-title
